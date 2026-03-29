@@ -8,7 +8,7 @@ interface QuestionsPageProps {
 
 const questions = [
   {
-    question: "What's Kind of moment makes you feel special? 💕",
+    question: "What Kind of moment makes you feel special? 💕",
     options: [
       "A calm, meaningful conversation.",
       "A nice meal and good company.",

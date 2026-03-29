@@ -149,9 +149,9 @@ const CelebrationPage = ({ onPoem, onThankYou }: CelebrationPageProps) => {
             })}
           </div>
 
-          <p className="text-muted-foreground mt-12 font-body text-center text-sm">
+          {/* <p className="text-muted-foreground mt-12 font-body text-center text-sm">
             Replace placeholder photos in <code className="bg-secondary px-2 py-1 rounded">CelebrationPage.tsx</code>
-          </p>
+          </p> */}
           
           {onPoem && (
             <div className="mt-12">

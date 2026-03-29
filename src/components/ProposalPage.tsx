@@ -65,7 +65,7 @@ const ProposalPage = ({ onYes, onNo, onPoem }: ProposalPageProps) => {
         </p>
 
         {/* Image gallery section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
           <div className="overflow-hidden rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
             <img 
               src={image1} 
@@ -88,7 +88,7 @@ const ProposalPage = ({ onYes, onNo, onPoem }: ProposalPageProps) => {
               alt="Special moment 2" 
               className="w-full h-48 object-cover"
             />
-          </div>
+          </div> */}
           {/* <div className="overflow-hidden rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
             <img 
               src={image3} 
@@ -96,7 +96,7 @@ const ProposalPage = ({ onYes, onNo, onPoem }: ProposalPageProps) => {
               className="w-full h-48 object-cover"
             />
           </div> */}
-        </div>
+        {/* </div> */}
 
         <div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"

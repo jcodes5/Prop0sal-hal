@@ -3,10 +3,10 @@ import { Heart, BookOpen } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import image1 from "@/assets/image1.jpg";
 import image2 from "@/assets/image2.jpg";
-import image3 from "@/assets/image3.jpg";
 
 interface CelebrationPageProps {
   onPoem?: () => void;
+  onThankYou?: () => void;
 }
 
 const FallingHeart = ({ delay, left }: { delay: number; left: number }) => {
@@ -28,7 +28,7 @@ const FallingHeart = ({ delay, left }: { delay: number; left: number }) => {
   );
 };
 
-const CelebrationPage = ({ onPoem }: CelebrationPageProps) => {
+const CelebrationPage = ({ onPoem, onThankYou }: CelebrationPageProps) => {
   const [showCarousel, setShowCarousel] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -50,12 +50,24 @@ const CelebrationPage = ({ onPoem }: CelebrationPageProps) => {
     return () => clearInterval(interval);
   }, [showCarousel, photos.length]);
 
-  // TODO: Add your voice recording as /public/celebration.mp3
-  // Uncomment below when ready:
+  // Play audio and navigate to thank you page after it finishes
   useEffect(() => {
     const audio = new Audio("/celebration.m4a");
-    audio.play().catch(() => {});
-  }, []);
+    
+    const handleAudioEnd = () => {
+      if (onThankYou) {
+        onThankYou();
+      }
+    };
+    
+    audio.addEventListener('ended', handleAudioEnd);
+    audio.play().catch(error => console.error("Audio playback failed:", error));
+    
+    // Cleanup event listener
+    return () => {
+      audio.removeEventListener('ended', handleAudioEnd);
+    };
+  }, [onThankYou]);
 
   return (
     <div className="min-h-screen gradient-love-soft relative overflow-hidden">
@@ -85,12 +97,7 @@ const CelebrationPage = ({ onPoem }: CelebrationPageProps) => {
             I am the happiest man on the earth right now 🥹💖
           </p>
 
-          {/* <p
-            className="text-muted-foreground mt-8 font-body"
-            style={{ opacity: 0, animation: "fade-in-up 1s ease-out 2s forwards" }}
-          >
-            🔊 Add your voice recording as <code className="bg-secondary px-2 py-1 rounded text-sm">/public/celebration.mp3</code>
-          </p> */}
+          {/* Removed the instruction about adding audio */}
         </div>
       )}
 

@@ -82,6 +82,13 @@ const ProposalPage = ({ onYes, onNo, onPoem }: ProposalPageProps) => {
             />
           </div>
           
+           <div className="overflow-hidden rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
+            <img 
+              src={image2} 
+              alt="Special moment 2" 
+              className="w-full h-48 object-cover"
+            />
+          </div>
           {/* <div className="overflow-hidden rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
             <img 
               src={image3} 

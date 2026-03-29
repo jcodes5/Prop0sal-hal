@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+#README.md for my proposal website
 
-TODO: Document your project here
+
 # Prop0sal-hal
